@@ -52,8 +52,16 @@ app.post('/', async function (req, res) {
 })
 
 app.get('/', function (req, res) {
-  console.log(req.body)
-  res.status(200).send('Hello World') 
+  //console.log(req.body)
+  const query2 = `SELECT * FROM transactions;`
+  data = client.query(query2, (err, res) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    console.log("Selected");
+  });
+  res.status(200).send(data) 
 })
 
 app.listen(3000)

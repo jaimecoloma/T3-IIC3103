@@ -10,7 +10,7 @@
 //const data = await response.json()
 //console.log(data)
 const get_data = async () => {
-    const response = await fetch('https://b1ad-190-45-93-233.ngrok-free.app/')
+    const response = await fetch('https://t3-iic3103-jaimecoloma.onrender.com/')
     const data = await response.json()
     console.log(data)
     return data
