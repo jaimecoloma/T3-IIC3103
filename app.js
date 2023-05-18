@@ -51,17 +51,32 @@ app.post('/', async function (req, res) {
   }
 })
 
-app.get('/', function (req, res) {
+app.get('/', async function (req, res) {
   //console.log(req.body)
   const query2 = `SELECT * FROM transactions;`
-  data = client.query(query2, (err, res) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-    console.log("Selected");
-  });
-  res.status(200).send(data) 
+  try {
+    const data = await new Promise((resolve, reject) => {
+      client.query(query2, (err, result) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+        } else {
+          console.log("Selected");
+          resolve(result);
+        }
+      });
+    });
+
+    // Process the data
+    console.log(data);
+
+    // Send the response to the front end
+    res.status(200).send(data);
+  } catch (error) {
+    // Handle error
+    console.error(error);
+    res.status(500).send("An error occurred.");
+  }
 })
 
 app.listen(3000)
