@@ -67,8 +67,6 @@ app.get('/', async function (req, res) {
       });
     });
 
-    // Process the data
-    console.log(data);
 
     // Send the response to the front end
     res.status(200).send(data);
