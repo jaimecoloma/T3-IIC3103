@@ -1,7 +1,6 @@
 const get_data = async () => {
     const response = await fetch('https://t3-iic3103-jaimecoloma.onrender.com/')
     const data = await response.json()
-    console.log("llegamos aquí")
     console.log(data.rows[0])
     //const firstRow = response[0];
     //for (let columnName in firstRow) {

@@ -58,7 +58,6 @@ app.get('/', async function (req, res) {
     const data = await new Promise((resolve, reject) => {
       client.query(query2, (err, result) => {
         if (err) {
-          console.error(err);
           reject(err);
         } else {
           console.log("Selected");
@@ -72,7 +71,6 @@ app.get('/', async function (req, res) {
     res.status(200).send(data);
   } catch (error) {
     // Handle error
-    console.error(error);
     res.status(500).send("An error occurred.");
   }
 })
