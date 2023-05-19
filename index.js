@@ -122,9 +122,7 @@ const get_data = async () => {  //https://erin-ray-garb.cyclic.app
             <td><i class="fa fa-arrow-right w3-text-green w3-large"></i>${value*-1}</td>
             <td>${bank1}</td>`
         }
-        console.log(key, value);
      });
-    console.log(pares)
 
     return data
 }
