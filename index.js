@@ -1,5 +1,5 @@
 const get_data = async () => {  //https://erin-ray-garb.cyclic.app
-    const response = await fetch('https://erin-ray-garb.cyclic.app')  //https://t3-back-iic3103-jaimecoloma.onrender.com
+    const response = await fetch('https://t3-back-iic3103-jaimecoloma.onrender.com')  //https://t3-back-iic3103-jaimecoloma.onrender.com
     const data = await response.json()
     const bank_ops = document.getElementById('bank_ops');
     bank_ops.innerHTML = `<h4>${data.rows.length}</h4>`
